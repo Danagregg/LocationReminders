@@ -8,18 +8,23 @@
 
 import UIKit
 
+protocol AddViewControllerDelegate {
+    func addViewDidFinish(controller: AddViewController, event: String, location: String)
+}
+
 class AddViewController: UIViewController {
+    
+    var delegate:AddViewControllerDelegate! = nil
 
     @IBOutlet weak var reminderText: UITextField!
     
     @IBOutlet weak var locationText: UITextField!
     
-    func addReminder() {
+    @IBAction func done(sender: UIButton) {
         let event = reminderText!.text
         let location = locationText!.text
         
-        let reminder = Reminder(event: event!, location: location!)
-        //reminders.add(reminder)
+        delegate!.addViewDidFinish(self, event: event!, location: location!)
     }
 
 }

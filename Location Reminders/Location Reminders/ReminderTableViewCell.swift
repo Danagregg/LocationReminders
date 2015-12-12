@@ -10,14 +10,18 @@ import Foundation
 import UIKit
 
 class ReminderTableViewCell: UITableViewCell {
-    var reminder: Reminder? {
+    var reminder: Reminder?
+    
+    @IBOutlet weak var reminderText: UILabel!  {
         didSet {
             updateUI()
         }
     }
-    
-    @IBOutlet weak var reminderText: UILabel!
-    @IBOutlet weak var reminderLocation: UILabel!
+    @IBOutlet weak var reminderLocation: UILabel! {
+        didSet {
+            updateUI()
+        }
+    }
     
     func updateUI(){
         reminderText?.text = nil
