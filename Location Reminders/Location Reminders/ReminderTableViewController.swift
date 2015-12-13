@@ -18,7 +18,7 @@ class ReminderTableViewController: UITableViewController, AddViewControllerDeleg
     }
     
     private struct Storyboard {
-        static let CellReuseIdentifier = "Reminder"
+        static let CellReuseIdentifier = "ReminderTableViewCell"
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
